@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.22)
 
 if (NOT DEFINED CMAKE_CXX_STANDARD)
-  set(CMAKE_CXX_STANDARD 20)
+  set(CMAKE_CXX_STANDARD 23)
 endif()
 
 project(project_name VERSION 0.0.0 LANGUAGES CXX)
@@ -16,6 +16,9 @@ if(CMAKE_COMPILER_IS_GNUCXX)
     -Wlogical-op -Wuseless-cast -Wsign-conversion -Wfloat-equal -Weffc++ -Wold-style-cast -Wvexing-parse -Wformat=2 -Wvla 
     -Wsuggest-override -Wsuggest-final-methods -Wsuggest-final-types -Wnon-virtual-dtor -Wctor-dtor-privacy
   )
+    if(CMAKE_CXX_COMPILER_VERSION VERSION_EQUAL 14.1.1)
+      add_compile_options(-Wnrvo)
+    endif()
 endif()
 
 if(CMAKE_BUILD_TYPE STREQUAL Debug)
