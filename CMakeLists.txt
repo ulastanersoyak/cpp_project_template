@@ -14,7 +14,7 @@ if(CMAKE_COMPILER_IS_GNUCXX)
   add_compile_options(
     -Wall -Wextra -Wpedantic -Werror -Wunused -Wuninitialized -Wshadow -Wconversion -Wduplicated-cond -Wduplicated-branches
     -Wlogical-op -Wuseless-cast -Wsign-conversion -Wfloat-equal -Weffc++ -Wold-style-cast -Wvexing-parse -Wformat=2 -Wvla 
-    -Wsuggest-override -Wsuggest-final-methods -Wsuggest-final-types -Wnon-virtual-dtor -Wctor-dtor-privacy
+    -Wsuggest-override -Wsuggest-final-methods -Wsuggest-final-types -Wnon-virtual-dtor -Wctor-dtor-privacy -Wlifetime
   )
     if(CMAKE_CXX_COMPILER_VERSION VERSION_EQUAL 14.1.1)
       add_compile_options(-Wnrvo)
